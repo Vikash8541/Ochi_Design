@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======== Universal Values =================== */
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+a{
+    text-decoration: none;
+}
+
+.common-anim{
+    position: relative;
+    overflow: hidden;
+}
+.common-anim::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: .05em;
+    background: #212121;
+    will-change: transform;
+    transform-origin: 0 0;
+    transform: scaleX(1);
+    -webkit-animation: none;
+    animation: none;
+    pointer-events: none;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    transition-duration: .5s;
+}
+.common-anim:hover::after{
+    animation: link .75s forwards;
+}
+@keyframes link {
+    0%, 0.1% {
+        transform-origin: 100% 100%;
+        transform: scaleX(1);
+    }
+    
+    49.9% {
+        transform-origin: 100% 100%;
+        transform: scaleX(0);
+    }
+    50%, 50.1% {
+        transform-origin: 0 0;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: 0 0;
+        transform: scaleX(1);
+    }
+}
+
+/* =========== Header CSS ====================== */
+
+
+.navigation-links ul li a{
+font-family: "NeueMontreal", "Roboto", sans-serif;
+font-size: 17px;
+font-weight: 400;
+color: #000;
+font-style: normal;
+line-height: 26px;
+}
+
+/* =========== Header CSS ====================== */
+
+/* =========== Landing Section work start ====================== */
+.landing-section .landing-text .maskerr h1{
+    font-family: "FoundersGrotesk", "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    Color:rgb(33, 33, 33);
+    font-size:130px;
+    line-height:120px;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+}
+.landing-section .start-btn a{
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 400;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: "NeueMontreal", "Roboto", sans-serif;
+        transition: all 0.5s ease;
+}
+
+.landing-section .start-btn span::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    z-index: -1;
+    transform: scale(0);
+    transform-origin: center;
+    border-radius: 100%;
+    background-color: #212121;
+    transition: all 0.5s ease;
+}
+
+.landing-section .start-btn:hover a{
+    background-color: #212121;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.landing-section .start-btn:hover span::before{
+    border: 1px solid transparent;
+    transform: scale(1);
+}
+.landing-section .start-btn:hover span svg{
+    fill: #fff;
+}
+/* =========== Landing Section work end ====================== */
+
+
+/* =========== Marquee box work start ====================== */
+.marquee-box .marquee-text h2{
+    font-family: "FoundersGrotesk", "Roboto", sans-serif;
+    font-weight:700;
+    letter-spacing: -15px;
+}
+/* =========== Marquee box work end ====================== */
+
+
+/* =========== About Page  work start ====================== */
+.about h2{
+    font-family: "FoundersGrotesk", "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+
+/* =========== About Page  work end ====================== */
+
+/* =========== Eye work start ====================== */
+.eyes .bg-eye-green{
+    position: absolute;
+    background: url(./assets/eye-bg.jpg) no-repeat center;
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+ .eyes .black-circle, .eyes .eye-ball, .eyes .line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+
+}
+/* =========== Eye work end ====================== */
+
+/* ======= Featured Work start ================= */
+.featured .cards-container .cards h6::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #212121;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+}
+
+
+/* ======= Featured Work end ================= */
